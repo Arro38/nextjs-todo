@@ -13,7 +13,7 @@ export const GET = async () => {
   }
 };
 
-export const POST = async ({ request }: { request: Request }) => {
+export const POST = async (request: Request) => {
   try {
     const body: { title: string; description: string; listId: string } =
       await request.json();
