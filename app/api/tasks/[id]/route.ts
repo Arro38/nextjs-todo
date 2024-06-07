@@ -15,12 +15,16 @@ export const GET = async ({ params }: { params: { id: string } }) => {
 
 export const PUT = async ({
   params,
-  body,
+  request,
 }: {
   params: { id: string };
-  body: { title: string; isCompleted: boolean };
+  request: Request;
 }) => {
   try {
+    const body: { title: string; isCompleted: boolean } = await request.json();
+    if (!body.title || !body.isCompleted) {
+      return NextResponse.json({ error: "Bad request" }, { status: 400 });
+    }
     const task = await updateTask(params.id, body);
     return NextResponse.json(task, { status: 200 });
   } catch (error) {

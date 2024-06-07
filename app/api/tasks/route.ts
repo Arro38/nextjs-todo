@@ -13,12 +13,13 @@ export const GET = async () => {
   }
 };
 
-export const POST = async ({
-  body,
-}: {
-  body: { title: string; description: string; listId: string };
-}) => {
+export const POST = async ({ request }: { request: Request }) => {
   try {
+    const body: { title: string; description: string; listId: string } =
+      await request.json();
+    if (!body.title || !body.description || !body.listId) {
+      return NextResponse.json({ error: "Bad request" }, { status: 400 });
+    }
     const task = await createTask(body);
     return NextResponse.json(task, { status: 201 });
   } catch (error) {
