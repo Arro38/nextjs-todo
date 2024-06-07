@@ -40,21 +40,37 @@ export const deleteTask = async (id: string) => {
   return deletedTask;
 };
 
-export const updateTask = async (
-  id: string,
-  { title, isCompleted }: { title: string; isCompleted: boolean }
-) => {
+export const updateTaskTitle = async (id: string, title: string) => {
   const updatedTask = await prisma.task.update({
     where: { id },
-    data: { title, isCompleted },
+    data: { title },
   });
   return updatedTask;
 };
 
-export const updateTaskStatus = async (id: string, status: boolean) => {
+export const updateTaskDescription = async (
+  id: string,
+  description: string
+) => {
   const updatedTask = await prisma.task.update({
     where: { id },
-    data: { isCompleted: status },
+    data: { description },
+  });
+  return updatedTask;
+};
+
+export const updateTaskListId = async (id: string, listId: string) => {
+  const updatedTask = await prisma.task.update({
+    where: { id },
+    data: { listId },
+  });
+  return updatedTask;
+};
+
+export const updateTaskStatus = async (id: string, isCompleted: boolean) => {
+  const updatedTask = await prisma.task.update({
+    where: { id },
+    data: { isCompleted },
   });
   return updatedTask;
 };
