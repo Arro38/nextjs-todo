@@ -1,4 +1,3 @@
-import { Task } from "@prisma/client";
 import prisma from "./prisma";
 
 export const getTasks = async () => {

@@ -1,4 +1,3 @@
-import { List } from "@prisma/client";
 import prisma from "./prisma";
 
 export const getLists = async () => {
