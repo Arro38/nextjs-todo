@@ -1,7 +1,10 @@
 import prisma from "./prisma";
 
 export const getLists = async () => {
-  const lists = await prisma.list.findMany();
+  const lists = await prisma.list.findMany({
+    include: { tasks: true },
+    orderBy: { id: "asc" },
+  });
   return lists;
 };
 
