@@ -6,7 +6,7 @@ export default async function Home() {
   return (
     <main className="mx-4 flex flex-col gap-6 items-center justify-center">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Trello like app Beta 1.0
+        Trello like app Beta 1.1
       </h1>
       <p className="text-lg text-gray-600">
         This is a simple Trello like app built with Next.js and Prisma.
