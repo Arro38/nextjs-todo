@@ -13,7 +13,7 @@ export default function Navbar() {
         </a>
       </Button>
       <Button variant="link" asChild className="text-primary h-16 w-16">
-        <Link href="https://workerz.tech">Workerz.tech</Link>
+        <Link href="https://coding974.com">Coding974.com</Link>
       </Button>
       <ThemeToggle />
     </header>
