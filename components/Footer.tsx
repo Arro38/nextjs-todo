@@ -1,4 +1,5 @@
 import { Section, Container } from "@/components/craft";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 
 export default function Footer() {
@@ -11,9 +12,11 @@ export default function Footer() {
             <Link href="/#">Terms of Service</Link>
             <Link href="/#">Cookie Policy</Link>
           </div>
-          <p className="text-muted-foreground">
-            © <a href="https://github.com/Arro38">Etienne VAYTILINGOM</a>. All
-            rights reserved. 2024-present.
+          <p className="text-muted-foreground flex flex-col gap-2 items-center md:flex-row">
+            <a href="https://github.com/Arro38">
+              <SiGithub className="fill-current h-full w-full" />
+            </a>
+            <a href="https://coding974.com">Coding974.com</a>© 2024-present
           </p>
         </Container>
       </Section>
